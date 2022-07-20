@@ -1,0 +1,22 @@
+def sort(lst):
+     return sorted(lst)
+ 
+
+def binary_search(lst, number):
+    for i in range(len(lst) - 1):
+         if number > lst[i] and number <= lst[i + 1]:
+             return i + 1
+         else:
+            return -1
+     
+def abc():
+     lst = list(map(int, input('Введите последовательность чисел через пробел: ').split()))
+     number = int(input('Введите любое число: '))
+     order_sorted = sort(lst)
+     position = binary_search(order_sorted, number)
+     print('1. Последовательность чисел:', *lst)
+     print('2. Сортировка списка по возрастанию:', *order_sorted)
+     print('3. Номер позиции меньшего элемента в последовательности', *order_sorted,
+           'относительно числа', number,
+           'это', position)
+abc()
